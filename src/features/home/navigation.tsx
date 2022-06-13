@@ -1,6 +1,7 @@
 import React from 'react';
 import * as screens from './screens';
-import { Stack } from '../../navigation';
+import { Stack } from '@navigation';
+
 
 const homeNavigation = () => (
   <>

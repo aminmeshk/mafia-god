@@ -1,1 +1,3 @@
-export const AppStackParamList = {};
+export type AppStackParamList = {
+  Home: undefined;
+};
