@@ -1,15 +1,17 @@
 import React from 'react';
-import { theme } from '@constants';
-import { NavigationContainer } from '@react-navigation/native';
-import { NativeBaseProvider } from 'native-base';
+import { RecoilRoot } from 'recoil';
+import MyNativeBaseProvider from './MyNativeBaseProvider';
+import NavigationProvider from './NavigationProvider';
 
 type Props = {};
 
 const AppProvider: React.FC<Props> = ({ children }) => {
   return (
-    <NavigationContainer>
-      <NativeBaseProvider theme={theme}>{children}</NativeBaseProvider>
-    </NavigationContainer>
+    <RecoilRoot>
+      <MyNativeBaseProvider>
+        <NavigationProvider>{children}</NavigationProvider>
+      </MyNativeBaseProvider>
+    </RecoilRoot>
   );
 };
 

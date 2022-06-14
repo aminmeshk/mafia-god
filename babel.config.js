@@ -28,6 +28,7 @@ module.exports = {
           '@features': './src/features',
           '@navigation': './src/navigation',
           '@models': './src/models',
+          '@store': './src/store',
           '@test': './src/test',
         },
       },
