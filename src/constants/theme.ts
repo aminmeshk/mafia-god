@@ -27,6 +27,38 @@ export const theme = extendTheme({
       900: '#000b15',
     },
   },
+  fontConfig: {
+    Mafia: {
+      100: {
+        normal: 'mafia-nights',
+        italic: 'mafia-nights',
+      },
+      200: {
+        normal: 'mafia-nights',
+        italic: 'mafia-nights',
+      },
+      300: {
+        normal: 'mafia-nights',
+        italic: 'mafia-nights',
+      },
+      400: {
+        normal: 'mafia-nights',
+        italic: 'mafia-nights',
+      },
+      500: {
+        normal: 'mafia-nights',
+      },
+      600: {
+        normal: 'mafia-nights',
+        italic: 'mafia-nights',
+      },
+    },
+  },
+  fonts: {
+    heading: 'Mafia',
+    body: 'Mafia',
+    mono: 'Mafia',
+  },
   config: {
     initialColorMode: 'dark',
   },

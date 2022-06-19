@@ -1,12 +1,13 @@
 import React from 'react';
-import { MaterialCommunityIcons, Ionicons } from '@native-base/icons';
-import { Icon, Image, Pressable, Spacer, Text, View } from 'native-base';
+import { Icon, Image, Pressable, Text, View } from 'native-base';
 import { images } from '@constants';
+import { IconPackName } from '@types';
+import { useIconPack } from '@hooks';
 
 type Props = React.ComponentProps<typeof Pressable> & {
   iconName: string;
   text: string;
-  iconPack: 'Ionicons' | 'MaterialCommunityIcons';
+  iconPack: IconPackName;
   mafiaImage?: boolean;
 };
 
@@ -17,6 +18,7 @@ const HomeButton: React.FC<Props> = ({
   text,
   ...props
 }) => {
+  const selectedIconPack = useIconPack(iconPack);
   return (
     <Pressable
       rounded="lg"
@@ -32,7 +34,7 @@ const HomeButton: React.FC<Props> = ({
       {...props}>
       {mafiaImage ? (
         <Image
-          source={images.mafia}
+          source={images.mafiaBold}
           alt="Mafia Icon"
           size="16"
           tintColor="white"
@@ -42,7 +44,7 @@ const HomeButton: React.FC<Props> = ({
         />
       ) : (
         <Icon
-          as={iconPack === 'Ionicons' ? Ionicons : MaterialCommunityIcons}
+          as={selectedIconPack}
           name={iconName}
           size="3xl"
           color="white"
@@ -51,7 +53,7 @@ const HomeButton: React.FC<Props> = ({
           }}
         />
       )}
-      <View h="2" />
+      <View h={mafiaImage ? '3' : '2'} />
       <Text fontSize="xl">{text}</Text>
     </Pressable>
   );
