@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { AppStackParamList } from '@types';
 import { Center, HStack, VStack } from 'native-base';
@@ -6,7 +6,11 @@ import { HomeButton } from '../components';
 
 type Props = NativeStackScreenProps<AppStackParamList, 'Home'>;
 
-const HomeScreen: React.FC<Props> = () => {
+const HomeScreen: React.FC<Props> = ({ navigation }) => {
+  const navigateToNewGame = useCallback(() => {
+    navigation.navigate('SetupPlayers');
+  }, [navigation]);
+
   return (
     <Center flex={1}>
       <VStack w="100%" h="70%" p="4" space={3}>
@@ -16,6 +20,7 @@ const HomeScreen: React.FC<Props> = () => {
           text="بازی جدید"
           flex={2}
           mafiaImage
+          onPress={navigateToNewGame}
         />
         <HStack flex={1} space={3}>
           <HomeButton

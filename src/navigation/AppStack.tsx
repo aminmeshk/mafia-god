@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AppStackParamList } from '@types';
 import { homeNavigation } from '@features/home';
 import { ThemeSwitcher } from '@context';
+import { gameSetupNavigation } from '@features/gameSetup';
 
 export const Stack = createNativeStackNavigator<AppStackParamList>();
 
@@ -11,8 +12,10 @@ export const AppStack = () => {
     <Stack.Navigator
       screenOptions={{
         headerRight: () => <ThemeSwitcher />,
+        animation: 'fade_from_bottom',
       }}>
       {homeNavigation()}
+      {gameSetupNavigation()}
     </Stack.Navigator>
   );
 };
