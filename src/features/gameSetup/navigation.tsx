@@ -4,7 +4,13 @@ import { Stack } from '@navigation';
 
 const gameSetupNavigation = () => (
   <>
-    <Stack.Screen name="SetupPlayers" component={screens.SetupPlayersScreen} />
+    <Stack.Screen
+      name="SetupPlayers"
+      component={screens.SetupPlayersScreen}
+      options={{
+        title: 'بازیکن ها',
+      }}
+    />
   </>
 );
 

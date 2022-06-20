@@ -4,7 +4,11 @@ import { Stack } from '@navigation';
 
 const homeNavigation = () => (
   <>
-    <Stack.Screen name="Home" component={screens.HomeScreen} />
+    <Stack.Screen
+      name="Home"
+      component={screens.HomeScreen}
+      options={{ headerShown: false }}
+    />
   </>
 );
 

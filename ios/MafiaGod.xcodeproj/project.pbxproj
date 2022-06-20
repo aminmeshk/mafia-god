@@ -15,6 +15,7 @@
 		3CF4D9433DC94B009BFC2AD4 /* mafia-nights.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3D5E32F77F3468481F3CE3D /* mafia-nights.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-MafiaGod-MafiaGodTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-MafiaGod-MafiaGodTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		F677ACFD33894AFDAD3CED63 /* baran.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 052BF9F2A3594DC9BC66FF47 /* baran.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		00E356EE1AD99517003FC87E /* MafiaGodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MafiaGodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* MafiaGodTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MafiaGodTests.m; sourceTree = "<group>"; };
+		052BF9F2A3594DC9BC66FF47 /* baran.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = baran.ttf; path = ../src/assets/font/baran.ttf; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* MafiaGod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MafiaGod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = MafiaGod/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = MafiaGod/AppDelegate.mm; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				E3D5E32F77F3468481F3CE3D /* mafia-nights.ttf */,
+				052BF9F2A3594DC9BC66FF47 /* baran.ttf */,
 			);
 			name = Resources;
 			path = "";
@@ -257,6 +260,7 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3CF4D9433DC94B009BFC2AD4 /* mafia-nights.ttf in Resources */,
+				F677ACFD33894AFDAD3CED63 /* baran.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

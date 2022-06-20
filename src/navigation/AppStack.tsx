@@ -13,6 +13,10 @@ export const AppStack = () => {
       screenOptions={{
         headerRight: () => <ThemeSwitcher />,
         animation: 'fade_from_bottom',
+        headerTitleAlign: 'center',
+        headerTitleStyle: {
+          fontFamily: 'mafia-nights',
+        }
       }}>
       {homeNavigation()}
       {gameSetupNavigation()}

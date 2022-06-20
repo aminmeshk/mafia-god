@@ -53,11 +53,36 @@ export const theme = extendTheme({
         italic: 'mafia-nights',
       },
     },
+    Baran: {
+      100: {
+        normal: 'baran',
+        italic: 'baran',
+      },
+      200: {
+        normal: 'baran',
+        italic: 'baran',
+      },
+      300: {
+        normal: 'baran',
+        italic: 'baran',
+      },
+      400: {
+        normal: 'baran',
+        italic: 'baran',
+      },
+      500: {
+        normal: 'baran',
+      },
+      600: {
+        normal: 'baran',
+        italic: 'baran',
+      },
+    },
   },
   fonts: {
     heading: 'Mafia',
-    body: 'Mafia',
-    mono: 'Mafia',
+    body: 'Baran',
+    mono: 'Baran',
   },
   config: {
     initialColorMode: 'dark',

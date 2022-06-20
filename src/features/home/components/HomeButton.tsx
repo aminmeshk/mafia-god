@@ -54,7 +54,7 @@ const HomeButton: React.FC<Props> = ({
         />
       )}
       <View h={mafiaImage ? '3' : '2'} />
-      <Text fontSize="xl">{text}</Text>
+      <Text fontSize="xl" fontFamily="heading">{text}</Text>
     </Pressable>
   );
 };

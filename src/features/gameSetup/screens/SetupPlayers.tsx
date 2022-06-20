@@ -1,31 +1,60 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { FlatList, VStack } from 'native-base';
 import { AppStackParamList } from '@types';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { ItemSeparator, PlayerInput, PlayerRow } from '../components';
+import {
+  ItemSeparator,
+  PlayerInputContainer,
+  PlayerRow,
+  PlayersBottomCard,
+} from '../components';
+import { useRecoilState } from 'recoil';
+import { playersListState } from '@store';
 
 type Props = NativeStackScreenProps<AppStackParamList, 'SetupPlayers'>;
 
-const dummyData = [
-  { name: 'امین' },
-  { name: 'غزل' },
-  { name: 'عسل' },
-  { name: 'نیکو' },
-];
-
 const SetupPlayersScreen: React.FC<Props> = () => {
-  const renderItem = ({ item }: { item: { name: string } }) => {
-    return <PlayerRow name={item.name} />;
+  const [players, setPlayers] = useRecoilState(playersListState);
+
+  const addPlayer = useCallback(
+    (name: string) => {
+      setPlayers(prev => {
+        if (prev.filter(x => x.name === name).length > 0) {
+          return prev;
+        }
+        return [{ name }, ...prev];
+      });
+    },
+    [setPlayers],
+  );
+
+  const removePlayer = useCallback(
+    (index: number) => {
+      setPlayers(prev => [...prev.slice(0, index), ...prev.slice(index + 1)]);
+    },
+    [setPlayers],
+  );
+
+  const renderItem = ({
+    item,
+    index,
+  }: {
+    item: { name: string };
+    index: number;
+  }) => {
+    return <PlayerRow name={item.name} onDelete={() => removePlayer(index)} />;
   };
   return (
     <VStack flex={1}>
+      <PlayerInputContainer onAdd={addPlayer} />
       <FlatList
         flex={1}
-        data={dummyData}
+        data={players}
         renderItem={renderItem}
         ItemSeparatorComponent={ItemSeparator}
-        ListHeaderComponent={PlayerInput}
+        keyboardShouldPersistTaps="handled"
       />
+      <PlayersBottomCard playersCount={players.length} />
     </VStack>
   );
 };
