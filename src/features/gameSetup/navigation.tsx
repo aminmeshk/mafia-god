@@ -11,6 +11,13 @@ const gameSetupNavigation = () => (
         title: 'بازیکن ها',
       }}
     />
+    <Stack.Screen
+      name="SetupRoles"
+      component={screens.SetupRolesScreen}
+      options={{
+        title: 'نقش ها',
+      }}
+    />
   </>
 );
 

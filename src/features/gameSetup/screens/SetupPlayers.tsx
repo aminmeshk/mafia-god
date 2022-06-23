@@ -1,61 +1,43 @@
-import React, { useCallback, useState } from 'react';
-import { FlatList, VStack } from 'native-base';
+import React, { useCallback } from 'react';
+import { KeyboardAvoidingView, useTheme, VStack } from 'native-base';
 import { AppStackParamList } from '@types';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import {
-  ItemSeparator,
   PlayerInputContainer,
-  PlayerRow,
   PlayersBottomCard,
+  PlayersList,
 } from '../components';
-import { useRecoilState } from 'recoil';
-import { playersListState } from '@store';
+import { useHeaderHeight } from '@react-navigation/elements';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { usePlayersStore } from '@hooks';
 
 type Props = NativeStackScreenProps<AppStackParamList, 'SetupPlayers'>;
 
-const SetupPlayersScreen: React.FC<Props> = () => {
-  const [players, setPlayers] = useRecoilState(playersListState);
+const SetupPlayersScreen: React.FC<Props> = ({ navigation }) => {
+  const { addPlayer, players, removePlayer } = usePlayersStore();
+  const headerHeight = useHeaderHeight();
+  const insets = useSafeAreaInsets();
+  const theme = useTheme();
 
-  const addPlayer = useCallback(
-    (name: string) => {
-      setPlayers(prev => {
-        if (prev.filter(x => x.name === name).length > 0) {
-          return prev;
-        }
-        return [{ name }, ...prev];
-      });
-    },
-    [setPlayers],
-  );
+  const goToNextScreen = useCallback(() => {
+    navigation.navigate('SetupRoles');
+  }, [navigation]);
 
-  const removePlayer = useCallback(
-    (index: number) => {
-      setPlayers(prev => [...prev.slice(0, index), ...prev.slice(index + 1)]);
-    },
-    [setPlayers],
-  );
-
-  const renderItem = ({
-    item,
-    index,
-  }: {
-    item: { name: string };
-    index: number;
-  }) => {
-    return <PlayerRow name={item.name} onDelete={() => removePlayer(index)} />;
-  };
   return (
-    <VStack flex={1}>
-      <PlayerInputContainer onAdd={addPlayer} />
-      <FlatList
-        flex={1}
-        data={players}
-        renderItem={renderItem}
-        ItemSeparatorComponent={ItemSeparator}
-        keyboardShouldPersistTaps="handled"
-      />
-      <PlayersBottomCard playersCount={players.length} />
-    </VStack>
+    <KeyboardAvoidingView
+      _android={{ enabled: false }}
+      behavior="padding"
+      flex={1}
+      keyboardVerticalOffset={headerHeight - insets.bottom + theme.space[3]}>
+      <VStack flex={1}>
+        <PlayerInputContainer onAdd={addPlayer} />
+        <PlayersList players={players} onRemove={removePlayer} />
+        <PlayersBottomCard
+          playersCount={players.length}
+          onPress={goToNextScreen}
+        />
+      </VStack>
+    </KeyboardAvoidingView>
   );
 };
 

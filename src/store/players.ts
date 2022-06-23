@@ -3,5 +3,14 @@ import { atom } from 'recoil';
 
 export const playersListState = atom<Player[]>({
   key: 'playersListState',
-  default: [],
+  default: [
+    { name: 'امین مشک' },
+    { name: 'غزل عارف زاده' },
+    { name: 'عسل عارف زاده' },
+    { name: 'نیکو مرادی' },
+    { name: 'آذر آقایی' },
+    { name: 'محمد گودرزی' },
+    { name: 'یاسمن منصوری' },
+    { name: 'رضا نظری' },
+  ],
 });
