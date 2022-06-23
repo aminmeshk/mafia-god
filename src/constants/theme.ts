@@ -30,59 +30,72 @@ export const theme = extendTheme({
   fontConfig: {
     Mafia: {
       100: {
-        normal: 'mafia-nights',
-        italic: 'mafia-nights',
+        normal: 'MafiaNights-Bold',
+        italic: 'MafiaNights-Bold',
       },
       200: {
-        normal: 'mafia-nights',
-        italic: 'mafia-nights',
+        normal: 'MafiaNights-Bold',
+        italic: 'MafiaNights-Bold',
       },
       300: {
-        normal: 'mafia-nights',
-        italic: 'mafia-nights',
+        normal: 'MafiaNights-Bold',
+        italic: 'MafiaNights-Bold',
       },
       400: {
-        normal: 'mafia-nights',
-        italic: 'mafia-nights',
+        normal: 'MafiaNights-Bold',
+        italic: 'MafiaNights-Bold',
       },
       500: {
-        normal: 'mafia-nights',
+        normal: 'MafiaNights-Bold',
       },
       600: {
-        normal: 'mafia-nights',
-        italic: 'mafia-nights',
+        normal: 'MafiaNights-Bold',
+        italic: 'MafiaNights-Bold',
       },
     },
-    Baran: {
+    IRANSans: {
       100: {
-        normal: 'baran',
-        italic: 'baran',
+        normal: 'IRANSansMobile-UltraLight',
+        italic: 'IRANSansMobile-UltraLight',
       },
       200: {
-        normal: 'baran',
-        italic: 'baran',
+        normal: 'IRANSansMobile-UltraLight',
+        italic: 'IRANSansMobile-UltraLight',
       },
       300: {
-        normal: 'baran',
-        italic: 'baran',
+        normal: 'IRANSansMobile-Light',
+        italic: 'IRANSansMobile-Light',
       },
       400: {
-        normal: 'baran',
-        italic: 'baran',
+        normal: 'IRANSansMobile',
+        italic: 'IRANSansMobile',
       },
       500: {
-        normal: 'baran',
+        normal: 'IRANSansMobile-Medium',
+        italic: 'IRANSansMobile-Medium',
       },
       600: {
-        normal: 'baran',
-        italic: 'baran',
+        normal: 'IRANSansMobile-Medium',
+        italic: 'IRANSansMobile-Medium',
+      },
+      700: {
+        normal: 'IRANSansMobile-Bold',
+        italic: 'IRANSansMobile-Bold',
+      },
+      800: {
+        normal: 'IRANSansMobile-Black',
+        italic: 'IRANSansMobile-Black',
+      },
+      900: {
+        normal: 'IRANSansMobile-Black',
+        italic: 'IRANSansMobile-Black',
       },
     },
   },
   fonts: {
     heading: 'Mafia',
-    body: 'Baran',
-    mono: 'Baran',
+    body: 'IRANSans',
+    mono: 'IRANSans',
   },
   config: {
     initialColorMode: 'dark',

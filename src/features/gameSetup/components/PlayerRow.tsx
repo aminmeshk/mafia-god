@@ -16,7 +16,7 @@ const PlayerRow: React.FC<Props> = ({ name, onDelete }) => {
         icon={<Icon as={iconPack} name="delete" color="primary.600" />}
         onPress={onDelete}
       />
-      <Text flex={1} fontSize="2xl" textAlign="right" alignSelf="center">
+      <Text flex={1} fontSize="md" textAlign="right" alignSelf="center">
         {name}
       </Text>
     </HStack>

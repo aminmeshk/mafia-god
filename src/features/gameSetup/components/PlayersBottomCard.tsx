@@ -1,5 +1,6 @@
 import { Button } from 'native-base';
 import React from 'react';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 type Props = {
   playersCount: number;
@@ -7,6 +8,7 @@ type Props = {
 
 const PlayerBottomCard: React.FC<Props> = ({ playersCount }) => {
   const text = `ادامه با ${playersCount} بازیکن`;
+  const insets = useSafeAreaInsets();
 
   if (playersCount === 0) {
     return null;
@@ -18,8 +20,11 @@ const PlayerBottomCard: React.FC<Props> = ({ playersCount }) => {
       roundedTop="lg"
       isDisabled={playersCount < 5}
       py="3"
+      _ios={{
+        pb: insets.bottom,
+      }}
       _text={{
-        fontSize: 'xl',
+        fontSize: 'lg',
       }}
       _pressed={{
         bg: 'primary.600:alpha.80',

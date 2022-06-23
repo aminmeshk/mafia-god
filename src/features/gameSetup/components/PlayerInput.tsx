@@ -15,11 +15,12 @@ const PlayerInput: React.FC<Props> = ({ value, setValue, onSubmit }) => {
       placeholder="نام و نام خانوادگی بازیکن"
       flex={1}
       textAlign="right"
-      fontSize="xl"
-      lineHeight="md"
+      fontSize="md"
+      lineHeight="lg"
       autoCorrect={false}
       blurOnSubmit={false}
       onSubmitEditing={onSubmit}
+      h="12"
     />
   );
 };
