@@ -9,7 +9,7 @@ type Props = {
   onClose: () => void;
 } & React.ComponentProps<typeof Modal>;
 
-const InfoModal: React.FC<Props> = ({ role, isOpen, onClose, onOpen }) => {
+const InfoModal: React.FC<Props> = ({ role, isOpen, onClose }) => {
   const teamText = `تیم ${role.team === 'mafia' ? 'مافیا' : 'شهروندان'}`;
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="lg" animationPreset="fade">
@@ -24,7 +24,9 @@ const InfoModal: React.FC<Props> = ({ role, isOpen, onClose, onOpen }) => {
               {teamText}
             </Box>
             <Spacer />
-            <Text bold fontSize="lg">{role.name}</Text>
+            <Text bold fontSize="lg">
+              {role.name}
+            </Text>
           </HStack>
         </Modal.Header>
         <Modal.Body>

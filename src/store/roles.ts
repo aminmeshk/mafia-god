@@ -87,7 +87,7 @@ export const rolesListState = atom<Role[]>({
     {
       id: 11,
       name: 'مافیای ساده',
-      slug: '',
+      slug: 'mafia',
       team: 'mafia',
       description:
         'از اعضای مافیا که در شب با همراهی خود به پدرخوانده، دکتر لکتر و جوکر گروه مشورت می‌دهد.',

@@ -1,6 +1,6 @@
-import { useIconPack } from '@hooks';
+import { useGameRolesStore } from '@hooks';
 import { Role } from '@models';
-import { Button, Circle, HStack, Icon, Text, VStack } from 'native-base';
+import { Circle, HStack, Text, VStack } from 'native-base';
 import React, { useCallback, useState } from 'react';
 import Counter from './Counter';
 import InfoButton from './InfoButton';
@@ -10,19 +10,21 @@ type Props = {
 };
 
 const RoleRow: React.FC<Props> = ({ role }) => {
-  const { name, description, team } = role;
+  const { id, name, team, slug } = role;
+  const { getRoleCount, addRole, removeRole } = useGameRolesStore();
 
-  const [count, setCount] = useState(0);
+  const count = getRoleCount(slug);
+  const moreThanZero = count > 0;
 
   const increase = useCallback(() => {
-    setCount(prev => prev + 1);
-  }, []);
+    addRole(role);
+  }, [addRole, role]);
 
   const decrease = useCallback(() => {
-    setCount(prev => (prev > 0 ? prev - 1 : prev));
-  }, []);
-
-  const iconPack = useIconPack('Ionicons');
+    if (moreThanZero) {
+      removeRole(id);
+    }
+  }, [removeRole, id, moreThanZero]);
 
   return (
     <HStack py="2" px="3">
@@ -34,8 +36,8 @@ const RoleRow: React.FC<Props> = ({ role }) => {
             fontSize="md"
             textAlign="right"
             alignSelf="center"
-            fontWeight={count > 0 ? 'bold' : 'thin'}
-            opacity={count > 0 ? 1 : 0.6}>
+            fontWeight={moreThanZero ? 'bold' : 'thin'}
+            opacity={moreThanZero ? 1 : 0.6}>
             {name}
           </Text>
           <Circle

@@ -1,16 +1,7 @@
 import { InfoModal } from '@components';
 import { useIconPack } from '@hooks';
 import { Role } from '@models';
-import {
-  Box,
-  Button,
-  HStack,
-  Icon,
-  Modal,
-  Spacer,
-  Text,
-  useDisclose,
-} from 'native-base';
+import { Button, Icon, useDisclose } from 'native-base';
 import React from 'react';
 
 type Props = {

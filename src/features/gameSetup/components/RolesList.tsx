@@ -1,4 +1,4 @@
-import { Role } from '@models';
+import { Role, RoleSlug } from '@models';
 import { FlatList } from 'native-base';
 import React from 'react';
 import ItemSeparator from './ItemSeparator';
