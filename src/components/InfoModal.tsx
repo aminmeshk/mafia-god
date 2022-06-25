@@ -1,3 +1,4 @@
+import { TeamBox } from '@features/gameSetup/components';
 import { Role } from '@models';
 import { Box, HStack, Modal, Spacer, Text } from 'native-base';
 import React from 'react';
@@ -16,13 +17,7 @@ const InfoModal: React.FC<Props> = ({ role, isOpen, onClose }) => {
       <Modal.Content maxH="70%">
         <Modal.Header>
           <HStack w="full">
-            <Box
-              bg={role.team === 'citizens' ? 'green.700' : 'primary.600'}
-              p="1"
-              rounded="md"
-              _text={{ color: 'white' }}>
-              {teamText}
-            </Box>
+            <TeamBox team={role.team} textMode="teamAndPluralName" />
             <Spacer />
             <Text bold fontSize="lg">
               {role.name}

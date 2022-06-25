@@ -6,3 +6,5 @@ export { default as PlayersBottomCard } from './PlayersBottomCard';
 export { default as PlayersList } from './PlayersList';
 export { default as RolesList } from './RolesList';
 export { default as RoleRow } from './RoleRow';
+export { default as RolesBottomCard } from './RolesBottomCard';
+export * from './TeamBox';
