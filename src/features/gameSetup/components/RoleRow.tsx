@@ -1,15 +1,15 @@
 import { useGameRolesStore } from '@hooks';
 import { Role } from '@models';
 import { Circle, HStack, Text, VStack } from 'native-base';
-import React, { useCallback, useState } from 'react';
-import Counter from './Counter';
-import InfoButton from './InfoButton';
+import React, { useCallback } from 'react';
+import { Counter } from './Counter';
+import { InfoButton } from './InfoButton';
 
 type Props = {
   role: Role;
 };
 
-const RoleRow: React.FC<Props> = ({ role }) => {
+export const RoleRow: React.FC<Props> = ({ role }) => {
   const { id, name, team, slug } = role;
   const { getRoleCount, addRole, removeRole } = useGameRolesStore();
 
@@ -52,5 +52,3 @@ const RoleRow: React.FC<Props> = ({ role }) => {
     </HStack>
   );
 };
-
-export default RoleRow;

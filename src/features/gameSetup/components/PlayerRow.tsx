@@ -7,7 +7,7 @@ type Props = {
   onDelete: () => void;
 };
 
-const PlayerRow: React.FC<Props> = ({ name, onDelete }) => {
+export const PlayerRow: React.FC<Props> = React.memo(({ name, onDelete }) => {
   const iconPack = useIconPack('MaterialCommunityIcons');
   return (
     <HStack py="2" px="3">
@@ -21,6 +21,4 @@ const PlayerRow: React.FC<Props> = ({ name, onDelete }) => {
       </Text>
     </HStack>
   );
-};
-
-export default PlayerRow;
+});

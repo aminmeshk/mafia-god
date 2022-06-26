@@ -7,7 +7,7 @@ type Props = {
   onSubmit: () => void;
 };
 
-const PlayerInput: React.FC<Props> = ({ value, setValue, onSubmit }) => {
+export const PlayerInput: React.FC<Props> = ({ value, setValue, onSubmit }) => {
   return (
     <Input
       value={value}
@@ -24,5 +24,3 @@ const PlayerInput: React.FC<Props> = ({ value, setValue, onSubmit }) => {
     />
   );
 };
-
-export default PlayerInput;

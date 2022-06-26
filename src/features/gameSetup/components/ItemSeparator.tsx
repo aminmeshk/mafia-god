@@ -3,7 +3,7 @@ import React from 'react';
 
 type Props = {} & React.ComponentProps<typeof Box>;
 
-const ItemSeparator: React.FC<Props> = ({ ...props }) => {
+export const ItemSeparator: React.FC<Props> = React.memo(({ ...props }) => {
   return (
     <Box
       bg="gray.300:alpha.10"
@@ -13,6 +13,4 @@ const ItemSeparator: React.FC<Props> = ({ ...props }) => {
       {...props}
     />
   );
-};
-
-export default ItemSeparator;
+});

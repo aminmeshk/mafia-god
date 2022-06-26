@@ -1,2 +1,2 @@
-export { default as AppProvider } from './AppProvider';
-export { default as ThemeSwitcher } from './ThemeSwitcher';
+export * from './AppProvider';
+export * from './ThemeSwitcher';

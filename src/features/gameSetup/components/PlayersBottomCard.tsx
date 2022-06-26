@@ -1,4 +1,4 @@
-import { Box, Button, KeyboardAvoidingView, VStack } from 'native-base';
+import { Button } from 'native-base';
 import React from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -7,7 +7,10 @@ type Props = {
   onPress: () => void;
 };
 
-const PlayerBottomCard: React.FC<Props> = ({ playersCount, onPress }) => {
+export const PlayersBottomCard: React.FC<Props> = ({
+  playersCount,
+  onPress,
+}) => {
   const text = `ادامه با ${playersCount} بازیکن`;
   const insets = useSafeAreaInsets();
 
@@ -35,5 +38,3 @@ const PlayerBottomCard: React.FC<Props> = ({ playersCount, onPress }) => {
     </Button>
   );
 };
-
-export default PlayerBottomCard;

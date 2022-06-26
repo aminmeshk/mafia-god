@@ -1,13 +1,13 @@
 import React, { useCallback, useState } from 'react';
 import { HStack, Icon, IconButton } from 'native-base';
-import PlayerInput from './PlayerInput';
+import { PlayerInput } from './PlayerInput';
 import { useIconPack } from '@hooks';
 
 type Props = {
   onAdd: (value: string) => void;
 };
 
-const PlayerInputContainer: React.FC<Props> = ({ onAdd }) => {
+export const PlayerInputContainer: React.FC<Props> = ({ onAdd }) => {
   const iconPack = useIconPack('Ionicons');
   const [value, setValue] = useState('');
 
@@ -35,5 +35,3 @@ const PlayerInputContainer: React.FC<Props> = ({ onAdd }) => {
     </HStack>
   );
 };
-
-export default PlayerInputContainer;

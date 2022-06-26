@@ -2,12 +2,12 @@ import { useGameRolesStore, usePlayersStore } from '@hooks';
 import { Box, Button, HStack, Text, VStack } from 'native-base';
 import React from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import ItemSeparator from './ItemSeparator';
+import { ItemSeparator } from './ItemSeparator';
 import { TeamBox } from './TeamBox';
 
 type Props = {};
 
-const RolesBottomCard: React.FC<Props> = () => {
+export const RolesBottomCard: React.FC<Props> = () => {
   const { mafiaCount, citizenCount, rolesCount } = useGameRolesStore();
   const { players } = usePlayersStore();
   const totalText = `${rolesCount} از ${players.length} نقش`;
@@ -61,5 +61,3 @@ const RolesBottomCard: React.FC<Props> = () => {
     </Box>
   );
 };
-
-export default RolesBottomCard;

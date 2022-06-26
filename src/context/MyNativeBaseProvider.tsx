@@ -4,8 +4,6 @@ import React from 'react';
 
 type Props = {};
 
-const MyNativeBaseProvider: React.FC<Props> = ({ children }) => {
+export const MyNativeBaseProvider: React.FC<Props> = ({ children }) => {
   return <NativeBaseProvider theme={theme}>{children}</NativeBaseProvider>;
 };
-
-export default MyNativeBaseProvider;

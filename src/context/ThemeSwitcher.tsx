@@ -3,7 +3,7 @@ import React from 'react';
 
 type Props = {};
 
-const ThemeSwitcher: React.FC<Props> = () => {
+export const ThemeSwitcher: React.FC<Props> = () => {
   const colorMode = useColorMode();
   return (
     <IconButton
@@ -12,5 +12,3 @@ const ThemeSwitcher: React.FC<Props> = () => {
     />
   );
 };
-
-export default ThemeSwitcher;

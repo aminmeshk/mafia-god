@@ -1,11 +1,11 @@
 import React from 'react';
 import { RecoilRoot } from 'recoil';
-import MyNativeBaseProvider from './MyNativeBaseProvider';
-import NavigationProvider from './NavigationProvider';
+import { MyNativeBaseProvider } from './MyNativeBaseProvider';
+import { NavigationProvider } from './NavigationProvider';
 
 type Props = {};
 
-const AppProvider: React.FC<Props> = ({ children }) => {
+export const AppProvider: React.FC<Props> = ({ children }) => {
   return (
     <RecoilRoot>
       <MyNativeBaseProvider>
@@ -14,5 +14,3 @@ const AppProvider: React.FC<Props> = ({ children }) => {
     </RecoilRoot>
   );
 };
-
-export default AppProvider;

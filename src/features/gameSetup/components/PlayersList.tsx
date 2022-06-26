@@ -1,15 +1,15 @@
+import React from 'react';
 import { Player } from '@models';
 import { FlatList } from 'native-base';
-import React from 'react';
-import ItemSeparator from './ItemSeparator';
-import PlayerRow from './PlayerRow';
+import { ItemSeparator } from './ItemSeparator';
+import { PlayerRow } from './PlayerRow';
 
 type Props = {
   players: Player[];
   onRemove: (index: number) => void;
 };
 
-const PlayersList: React.FC<Props> = ({ players, onRemove }) => {
+export const PlayersList: React.FC<Props> = ({ players, onRemove }) => {
   const renderItem = ({
     item,
     index,
@@ -30,5 +30,3 @@ const PlayersList: React.FC<Props> = ({ players, onRemove }) => {
     />
   );
 };
-
-export default PlayersList;

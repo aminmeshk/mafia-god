@@ -33,7 +33,7 @@ const createNavigationDarkTheme = (nativeBaseTheme: ITheme): Theme => {
   };
 };
 
-const NavigationProvider: React.FC<Props> = ({ children }) => {
+export const NavigationProvider: React.FC<Props> = ({ children }) => {
   const colorMode = useColorMode();
   const nativeBaseTheme = useTheme();
 
@@ -57,5 +57,3 @@ const NavigationProvider: React.FC<Props> = ({ children }) => {
     </NavigationContainer>
   );
 };
-
-export default NavigationProvider;

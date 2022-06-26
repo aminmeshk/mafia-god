@@ -8,7 +8,7 @@ type Props = {
   role: Role;
 } & React.ComponentProps<typeof Button>;
 
-const InfoButton: React.FC<Props> = ({ role, ...props }) => {
+export const InfoButton: React.FC<Props> = ({ role, ...props }) => {
   const iconPack = useIconPack('Ionicons');
   const { isOpen, onClose, onOpen } = useDisclose();
   return (
@@ -29,5 +29,3 @@ const InfoButton: React.FC<Props> = ({ role, ...props }) => {
     </>
   );
 };
-
-export default InfoButton;
