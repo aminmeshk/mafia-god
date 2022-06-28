@@ -12,5 +12,7 @@ export const playersListState = atom<Player[]>({
     { name: 'محمد گودرزی' },
     { name: 'یاسمن منصوری' },
     { name: 'رضا نظری' },
+    { name: 'الهام رسن پور' },
+    { name: 'الهام مهسا رسن پور' },
   ],
 });

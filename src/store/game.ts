@@ -1,15 +1,24 @@
-import { Game, RoleSlug } from '@models';
+import { Game, Role, RoleSlug } from '@models';
 import { atom, selector } from 'recoil';
 
 export const gameState = atom<Game>({
   key: 'gameState',
   default: {
     roles: [],
+    gamePlayers: [],
+  },
+});
+
+export const gameRolesSelector = selector<Role[]>({
+  key: 'gameRolesSelector',
+  get: ({ get }) => {
+    const game = get(gameState);
+    return [...game.roles].sort((a, b) => a.id - b.id);
   },
 });
 
 export const gameRolesCountSelector = selector<{ [key in RoleSlug]?: number }>({
-  key: 'gameRolesSelector',
+  key: 'gameRolesCountSelector',
   get: ({ get }) => {
     const game = get(gameState);
     const result: { [key in RoleSlug]?: number } = {};
