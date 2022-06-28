@@ -8,3 +8,7 @@ export * from './RolesList';
 export * from './RoleRow';
 export * from './RolesBottomCard';
 export * from './TeamBox';
+export * from './PlayerChip';
+export * from './RoleChip';
+export * from './PlayersOverview';
+export * from './RolesOverview';

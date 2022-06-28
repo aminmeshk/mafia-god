@@ -23,7 +23,7 @@ export const TeamBox: React.FC<Props> = React.memo(
     return (
       <Box
         {...props}
-        bg={team === 'citizens' ? 'green.700' : 'primary.600'}
+        bg={team === 'citizens' ? 'green.700' : 'red.700'}
         p="1"
         rounded="md"
         _text={{ color: 'white' }}>

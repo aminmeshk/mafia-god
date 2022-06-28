@@ -9,6 +9,7 @@ const gameSetupNavigation = () => (
       component={screens.SetupPlayersScreen}
       options={{
         title: 'بازیکن ها',
+        headerBackTitle: 'خانه',
       }}
     />
     <Stack.Screen
@@ -16,6 +17,13 @@ const gameSetupNavigation = () => (
       component={screens.SetupRolesScreen}
       options={{
         title: 'نقش ها',
+      }}
+    />
+    <Stack.Screen
+      name="SetupOverview"
+      component={screens.SetupOverviewScreen}
+      options={{
+        title: 'بررسی نهایی',
       }}
     />
   </>

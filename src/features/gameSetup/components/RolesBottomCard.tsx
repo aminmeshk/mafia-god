@@ -1,13 +1,16 @@
+import { BottomButton } from '@components';
 import { useGameRolesStore, usePlayersStore } from '@hooks';
-import { Box, Button, HStack, Text, VStack } from 'native-base';
+import { Box, HStack, Text, VStack } from 'native-base';
 import React from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ItemSeparator } from './ItemSeparator';
 import { TeamBox } from './TeamBox';
 
-type Props = {};
+type Props = {
+  onPress: () => void;
+};
 
-export const RolesBottomCard: React.FC<Props> = () => {
+export const RolesBottomCard: React.FC<Props> = ({ onPress }) => {
   const { mafiaCount, citizenCount, rolesCount } = useGameRolesStore();
   const { players } = usePlayersStore();
   const totalText = `${rolesCount} از ${players.length} نقش`;
@@ -15,7 +18,11 @@ export const RolesBottomCard: React.FC<Props> = () => {
   const insets = useSafeAreaInsets();
 
   return (
-    <Box roundedTop="xl" bg="secondary.900" minH="100px">
+    <Box
+      roundedTop="xl"
+      bg="secondary.900"
+      _light={{ bg: 'white' }}
+      minH="100px">
       <VStack alignItems="stretch" space="2">
         <HStack justifyContent="center" alignItems="center" space="2" mt="3">
           <HStack flex={1} alignSelf="stretch" alignItems="center">
@@ -40,23 +47,9 @@ export const RolesBottomCard: React.FC<Props> = () => {
         </HStack>
         <ItemSeparator w="70%" alignSelf="center" />
         <Text textAlign="center">{totalText}</Text>
-        <Button
-          bg="primary.600"
-          roundedBottom="none"
-          roundedTop="lg"
-          isDisabled={!enabled}
-          py="3"
-          _ios={{
-            pb: insets.bottom,
-          }}
-          _text={{
-            fontSize: 'lg',
-          }}
-          _pressed={{
-            bg: 'primary.600:alpha.80',
-          }}>
+        <BottomButton isDisabled={!enabled} onPress={onPress}>
           ادامه
-        </Button>
+        </BottomButton>
       </VStack>
     </Box>
   );

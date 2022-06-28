@@ -1,4 +1,4 @@
-import { useGameRolesStore } from '@hooks';
+import { useGameRolesStore, usePlayersStore } from '@hooks';
 import { Role } from '@models';
 import { Circle, HStack, Text, VStack } from 'native-base';
 import React, { useCallback } from 'react';
@@ -11,14 +11,18 @@ type Props = {
 
 export const RoleRow: React.FC<Props> = ({ role }) => {
   const { id, name, team, slug } = role;
-  const { getRoleCount, addRole, removeRole } = useGameRolesStore();
+  const { getRoleCount, addRole, removeRole, rolesCount } = useGameRolesStore();
+  const { players } = usePlayersStore();
 
   const count = getRoleCount(slug);
   const moreThanZero = count > 0;
+  const playersCount = players.length;
 
   const increase = useCallback(() => {
-    addRole(role);
-  }, [addRole, role]);
+    if (rolesCount < playersCount) {
+      addRole(role);
+    }
+  }, [addRole, playersCount, rolesCount, role]);
 
   const decrease = useCallback(() => {
     if (moreThanZero) {
