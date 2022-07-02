@@ -6,6 +6,8 @@ export const gameState = atom<Game>({
   default: {
     roles: [],
     gamePlayers: [],
+    status: { currentRound: 1, currentTime: 'day' },
+    rounds: [],
   },
 });
 
