@@ -1,4 +1,4 @@
-import { Game, Role, RoleSlug } from '@models';
+import { Game, GamePlayer, Role, RoleSlug } from '@models';
 import { atom, selector } from 'recoil';
 
 export const gameState = atom<Game>({
@@ -6,7 +6,7 @@ export const gameState = atom<Game>({
   default: {
     roles: [],
     gamePlayers: [],
-    status: { currentRound: 1, currentTime: 'day' },
+    status: { currentRound: 1, currentTime: 'day', dealtGamePlayerIds: [] },
     rounds: [],
   },
 });
@@ -52,5 +52,23 @@ export const citizenCountSelector = selector<number>({
   get: ({ get }) => {
     const game = get(gameState);
     return game.roles.filter(x => x.team === 'citizens').length;
+  },
+});
+
+export const gamePlayersSelector = selector<GamePlayer[]>({
+  key: 'gamePlayersSelector',
+  get: ({ get }) => {
+    const game = get(gameState);
+    return game.gamePlayers;
+  },
+});
+
+export const undealtGamePlayersSelector = selector<GamePlayer[]>({
+  key: 'undealtGamePlayersSelector',
+  get: ({ get }) => {
+    const game = get(gameState);
+    return game.gamePlayers.filter(
+      x => !game.status.dealtGamePlayerIds.includes(x.id),
+    );
   },
 });

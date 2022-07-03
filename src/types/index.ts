@@ -3,6 +3,8 @@ export type AppStackParamList = {
   SetupPlayers: undefined;
   SetupRoles: undefined;
   SetupOverview: undefined;
+  ShowCard: { gamePlayerId: number };
+  SelectPlayerToDeal: undefined;
 };
 
 export type IconPackName =

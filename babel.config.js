@@ -21,7 +21,7 @@ module.exports = {
           '@constants': './src/constants',
           '@context': './src/context',
           '@types': './src/types',
-          '@lib': './src/lib',
+          '@services': './src/services',
           '@locale': './src/locale',
           '@hooks': './src/hooks',
           '@components': './src/components',

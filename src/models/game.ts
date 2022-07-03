@@ -8,6 +8,7 @@ export type Game = {
   status: {
     currentRound: number;
     currentTime: 'day' | 'night';
+    dealtGamePlayerIds: number[];
   };
   rounds: GameRound[];
 };

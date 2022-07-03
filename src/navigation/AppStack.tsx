@@ -5,6 +5,8 @@ import { homeNavigation } from '@features/home';
 import { ThemeSwitcher } from '@context';
 import { gameSetupNavigation } from '@features/gameSetup';
 import { Platform } from 'react-native';
+import { runningGameNavigation } from '@features/runningGame';
+import { cardDealingNavigation } from '@features/cardDealing';
 
 export const Stack = createNativeStackNavigator<AppStackParamList>();
 
@@ -24,6 +26,8 @@ export const AppStack = () => {
       }}>
       {homeNavigation()}
       {gameSetupNavigation()}
+      {runningGameNavigation()}
+      {cardDealingNavigation()}
     </Stack.Navigator>
   );
 };

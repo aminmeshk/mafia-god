@@ -4,7 +4,7 @@ import { Role } from './role';
 
 export type GamePlayer = {
   id: number;
-  player?: Player;
+  player: Player;
   role: Role;
   status: GamePlayerStatus;
 };
